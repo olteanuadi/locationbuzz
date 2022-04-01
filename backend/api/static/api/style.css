@@ -1,0 +1,41 @@
+html, body
+{
+    height: 100%;
+    width: 100%;
+}
+
+body
+{
+    background-color: black;
+    overflow: hidden;
+}
+
+.container
+{  
+    height: 100%;
+    display: table-cell;   
+}
+
+h1 {
+    font-size: 100px!important;
+}
+
+.find-button {
+    margin: 30px;
+    color: white;
+    background-color: rgb(39, 158, 255);
+    width: 300px;
+    height: 100px;
+    border-radius: 10px;
+    border: None;
+    border-color: None;
+    font-size: 60px;
+}
+
+.main_div {
+    padding-top: 10%;
+    display: table;
+    margin: 0 auto;
+    line-height: 50px;
+    font-size: 25px;
+}

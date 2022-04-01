@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+<div class="main_div">
+    <div class="text-center">
+        <h1>Where to? 📍</h1>
+    </div>
+    <form method="POST" action="" class="text-center">
+        <button type="button" class="find-button">Buzz</button>
+        <div class="accordion mx-2" id="accordionExample">
+            <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Extra Details
+                </button>
+            </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="row text-center">
+                            {% comment %} Relaxing-Engaging {% endcomment %}
+                            <span class='col-4'>Relaxing</span>
+                            <span class='col-4'><input type="range" min="1" id="criteria-range", value="50"></span>
+                            <span class='col-4'>Engaging</span>
+                            <br>
+                            {% comment %} Quiet-Loud {% endcomment %}
+                            <span class='col-4'>Quiet</span>
+                            <span class='col-4'><input type="range" min="1" id="criteria-range", value="50"></span>
+                            <span class='col-4'>Loud</span>
+                            <br>
+                            {% comment %} Restaurant {% endcomment %}
+                            <span class='col-4'><input type="checkbox" name="restaurant" value="Restaurant">
+                            <label for="restaurant">Restaurant</label></span>
+                            {% comment %} Cafe {% endcomment %}
+                            <span class='col-4'><input type="checkbox" name="cafe" value="Cafe">
+                            <label for="cafe">Cafe</label></span>
+                            {% comment %} Park {% endcomment %}
+                            <span class='col-4'><input type="checkbox" name="park" value="Park">
+                            <label for="park">Park</label></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock content %}
