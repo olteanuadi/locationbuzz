@@ -10,6 +10,8 @@ import random
 import requests
 import environ
 
+from google_images_search import GoogleImagesSearch
+
 env = environ.Env()
 environ.Env.read_env()
 
@@ -55,7 +57,28 @@ class ProcessFormData(View):
             "Authorization": env("FQ_API_KEY"),
         }
 
+        # Retrieving the response as a JSON
         response = requests.request("GET", url, headers=headers)
         output = json.loads(response.text)
-        print(output)
-        return redirect('index')
+        
+        location_details = []
+        # Adding the details' lists in list 'location_details'
+        for result in output['results']:
+            loc_name = result['name']
+            loc_type = result['categories'][0]['name']
+            loc_distance = result['distance']
+            loc_address = result['location']['address']
+            # Using Google's API to search images
+            gis = GoogleImagesSearch(env('GOOGLE_KEY'), env('GOOGLE_CX'))
+            _search_params = {
+                'q': loc_name,
+                'num': 1,
+                'fileType': 'jpg',
+                'safe': 'active',
+            }
+            gis.search(search_params=_search_params)
+            loc_img_url = (gis.results())[0].url
+            location_details.append([loc_name, loc_type, loc_distance, loc_address, loc_img_url])
+
+
+        return TemplateResponse(self.request, 'index/results.html', context={'location_details': location_details})

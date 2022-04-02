@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <style>
+
+        body {
+            overflow: scroll;
+        }
+
+        .content {
+            padding-top: 20px;
+            margin: 0 auto;
+            line-height: 50px;
+            font-size: 25px;
+            width: 80%;
+        }
+
+        .content img {
+            height: auto;
+            width: 20%;
+            float: left;
+            border-radius: 10px;
+            margin-left: 30px;
+        }
+        
+        .card-body {
+            display: inline-block!important;
+        }
+
+        .details {
+            display: block;
+            line-height: 20px;
+        }
+
+        h1 {
+            font-size: 50px!important;
+        }
+
+        @media screen and (max-width: 600px) {
+            .card-body {
+                display: block!important;
+            }
+
+            .content img {
+                float: none;
+                width: 100%;
+                height: auto;
+            }
+
+            h1 {
+                font-size: 70px!important;
+                line-height: 60px;
+                text-align: center!important;
+                margin-top: 20px;
+                margin-bottom: 30px;
+            }
+
+            .details {
+                color: rgb(150, 150, 150);
+                font-size: 23px;
+            }
+
+            .details p {
+                line-height: 23px;
+            }
+
+        }
+        
+        </style>
+        <!-- TODO: Align items center for mobile in card -->
+        <!-- TODO: Brainstorm any other detail to be added -->
+
+<div class="content">
+    {% for element in location_details %}
+    <div class="card">
+        <div class="card-body">
+            <img src="{{ element.4 }}">
+            <h1>{{ element.0 }}</h1>
+            <div class="details">
+                <p>Type: {{ element.1 }}</p>
+                <p>Address: {{ element.3 }}</p>
+                <p>Distance: {{ element.2 }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}

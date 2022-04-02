@@ -3,7 +3,7 @@
 
 
 {% block content %}
-<div class="main_div" onload="getlocation()">
+<div class="main_div" onload="getLocation()">
     <div class="text-center">
         <h1>Where to? 📍</h1>
     </div>
@@ -60,10 +60,10 @@
     }
 
     function showPosition(position) {
-        console.log(position.coords.latitude, position.coords.longitude)
         var locationInput = document.getElementById("locationInput");
         locationInput.value = position.coords.latitude + "/" + position.coords.longitude;
     }
+
     getLocation();
 </script>
 {% endblock script %}
