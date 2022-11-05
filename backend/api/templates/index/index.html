@@ -22,24 +22,17 @@
                     <div class="accordion-body">
                         <div class="row text-center">
                             {% comment %} Relaxing-Engaging {% endcomment %}
-                            <span class='col-4'>Relaxing</span>
+                            <span class='col-4'>Quiet/Relaxing</span>
                             <span class='col-4'><input type="range" name="relaxing_range" min="1" id="criteria-range" value="50"></span>
-                            <span class='col-4'>Engaging</span>
+                            <span class='col-4'>Loud/Engaging</span>
                             <br>
-                            {% comment %} Quiet-Loud {% endcomment %}
-                            <span class='col-4'>Quiet</span>
-                            <span class='col-4'><input type="range" name="loudness_range" min="1" id="criteria-range" value="50"></span>
-                            <span class='col-4'>Loud</span>
-                            <br>
-                            {% comment %} Restaurant {% endcomment %}
-                            <span class='col-4'><input type="checkbox" name="crit" value="Restaurant">
-                            <label for="restaurant">Restaurant</label></span>
-                            {% comment %} Cafe {% endcomment %}
-                            <span class='col-4'><input type="checkbox" name="crit" value="Cafe">
-                            <label for="cafe">Cafe</label></span>
-                            {% comment %} Park {% endcomment %}
-                            <span class='col-4'><input type="checkbox" name="crit" value="Park">
-                            <label for="park">Park</label></span>
+
+                            {% comment %} Inserting a category for every category in 'categories.json' {% endcomment %}
+                            {% for category in categories %}
+                                <span class='col-4'><input type="checkbox" name="crit" value="{{ category }}">
+                                <label for="{{ category }}">{{ category }}</label></span>
+                            {% endfor %}
+                            
                         </div>
                     </div>
                 </div>

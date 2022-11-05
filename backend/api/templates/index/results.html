@@ -20,7 +20,8 @@
             width: 20%;
             float: left;
             border-radius: 10px;
-            margin-left: 30px;
+            margin-left: 20px;
+            margin-right: 30px;
         }
         
         .card-body {
@@ -45,6 +46,7 @@
                 float: none;
                 width: 100%;
                 height: auto;
+                margin: 0;
             }
 
             h1 {
@@ -67,8 +69,6 @@
         }
         
         </style>
-        <!-- TODO: Align items center for mobile in card -->
-        <!-- TODO: Brainstorm any other detail to be added -->
 
 <div class="content">
     {% for element in location_details %}
@@ -79,7 +79,12 @@
             <div class="details">
                 <p>Type: {{ element.1 }}</p>
                 <p>Address: {{ element.3 }}</p>
-                <p>Distance: {{ element.2 }}</p>
+                <p>Distance: {{ element.2 }} km</p>
+                <p>Open: {{ element.5 }}</p>
+                {% if element.6 == "Unknown" %}
+                {% else %}
+                    <p>Price: {{ element.6 }}/4</p>
+                {% endif %}
             </div>
         </div>
     </div>

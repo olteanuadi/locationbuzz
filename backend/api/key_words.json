@@ -1,0 +1,52 @@
+{
+    "0" : [
+        "relaxing",
+        "quiet",
+        "peaceful",
+        "peacefulness",
+        "calming",
+        "calm",
+        "kind",
+        "kindness",
+        "family",
+        "kids",
+        "love",
+        "cosy",
+        "loved",
+        "comfortable",
+        "scenary"
+    ],
+    "25" : [
+        "nice",
+        "enjoy",
+        "enjoyment",
+        "chill",
+        "coffee",
+        "friendly",
+        "tasty",
+        "beautiful",
+        "excellent"
+    ],
+    "50" : [
+        "amazing",
+        "fun",
+        "awsome",
+        "casual"
+    ],
+    "75" : [
+        "engaging",
+        "drinks",
+        "music",
+        "atmosphere",
+        "crowded"
+    ],
+    "100" : [
+        "party",
+        "club",
+        "loud",
+        "dance",
+        "dancing",
+        "adults"
+    ]
+
+}
