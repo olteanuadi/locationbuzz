@@ -1,3 +1,4 @@
 env
 backend/backend/.env
 .vscode
+.gitignore
